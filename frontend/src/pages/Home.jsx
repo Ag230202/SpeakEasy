@@ -38,11 +38,7 @@ const Home = () => {
                             we help patients live a healthy,longer life.
                             </h1>
 
-                            <p className='text__para'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                                Sed vel eius officiis? Quaerat aliquam doloremque sequi modi optio 
-                                exercitationem! Quia debitis rem temporibus atque neque! Nisi voluptate error ipsa 
-                                sit aliquid nam. Autem quos, tenetur vitae deleniti, 
-                                consectetur unde natus voluptatum quisquam officia distinctio asperiores!</p>
+                            <p className='text__para'>Welcome to Speak Easy, your trusted partner in speech and language therapy. We believe that every individual deserves to communicate effectively and with clarity. Our dedicated team of speech therapists is committed to providing personalized care and evidence-based interventions to help you or your loved ones achieve their full potential.</p>
 
                                 <button className='btn'>
                                          Request an Appointment

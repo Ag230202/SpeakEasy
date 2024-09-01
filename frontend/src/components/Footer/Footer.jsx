@@ -1,24 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/website_logo.jpg'
 import {RiLinkedinFill} from 'react-icons/ri'
 import { AiFillYoutube,AiFillGithub,AiOutlineInstagram } from 'react-icons/ai'
 
 const socialLinks=[
   {
-    path:"https://www.youtube.com/c/codewithharry",
+    path:"/",
     icon: <AiFillYoutube className='group-hover:text-white w-4 h-5'/>,
   },
   {
-    path:"https://github.com/CodingWithMuhib",
+    path:"/",
     icon: <AiFillGithub className='group-hover:text-white w-4 h-5'/>,
   },
   {
-    path:"https://www.instagram.com/muhib160.official",
+    path:"/",
     icon: <AiOutlineInstagram className='group-hover:text-white w-4 h-5'/>,
   },
   {
-    path:"https://www.linkedin.com/in/codingwithmuhib",
+    path:"/",
     icon: <RiLinkedinFill className='group-hover:text-white w-4 h-5'/>,
   },
 
@@ -77,7 +77,7 @@ const Footer = () => {
     <div className="container">
       <div className="flex justify-between flex-col md:flex-row flex-wrap gap-[30px]">
         <div>
-          <img src={logo} alt="" />
+        <img src={logo} alt="Logo" style={{ width:'490px', height: '120px' }} /> 
           <p className='text-[16px] leading-7 font-[400] text-textColor mt-4'>
             Copyright@ {year} developed by name all rights reserved.
             </p>
