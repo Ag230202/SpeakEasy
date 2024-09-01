@@ -10,35 +10,36 @@ import reviewRoute from './Routes/review.js';
 import bookingRoute from './Routes/booking.js';
 
 dotenv.config()
- 
+ 
 const app = express()
 const port = process.env.PORT || 8000
 
+// Allow requests from your React app's origin
 const corsOptions = {
-  origin: 'http://localhost:5173'
+  origin: 'http://localhost:5173' // Replace with your React app's origin
 };
 
 
 app.get('/', (req, res) => {
-  res.send('API is working')
+  res.send('API is working')
 });
 
 //database connection
 mongoose.set('strictQuery',false)
 const connectDB=async()=>{
-    try{
-        await mongoose.connect(process.env.MONGO_URL,{
-            useNewUrlParser:true,
-            useUnifiedTopology:true,
-        })
+    try{
+        await mongoose.connect(process.env.MONGO_URL,{
+            useNewUrlParser:true,
+            useUnifiedTopology:true,
+        })
 
-        console.log('Mongo DB database is connected')
-    }
-    catch (err){
-        
-        console.log('Mongo DB database is not connected')
+        console.log('Mongo DB database is connected')
+    }
+    catch (err){
+        
+        console.log('Mongo DB database is not connected')
 
-    }
+    }
 }
 
 //middleware
@@ -49,14 +50,13 @@ app.use('/api/v1/auth',authRoute);
 app.use('/api/v1/users',userRoute); 
 app.use('/api/v1/doctors',doctorRoute); 
 app.use('/api/v1/reviews',reviewRoute);
-app.use('/api/v1/bookings',bookingRoute); 
-
+app.use('/api/v1/bookings',bookingRoute);
 
 
 
 
 
 app.listen(port, () => {
-    connectDB();
-  console.log(`Server is running on port ${port}`);
-})
+connectDB();
+console.log(`Server is running on port ${port}`);
+});

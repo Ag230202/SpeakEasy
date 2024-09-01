@@ -1,5 +1,5 @@
 {
-  "name": "medicare-booking",
+  "name": "medicare",
   "version": "1.0.0",
   "description": "",
   "type": "module",
@@ -9,10 +9,10 @@
     "start": "node index.js",
     "start-dev": "nodemon index.js"
   },
-  "author": "",
+  "author": "Animesh",
   "license": "ISC",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
+    "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
@@ -20,7 +20,6 @@
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.8.0",
     "mongoose": "^8.5.3",
-    "nodemon": "^3.1.4",
-    "stripe": "^16.8.0"
+    "stripe": "^16.9.0"
   }
 }
