@@ -5,7 +5,8 @@ import { Link,useNavigate } from 'react-router-dom';
 import uploadImageToCloudinary from '../../utils/uploadCloudinary';
 import { BASE_URL,token } from '../../config.js';
 import {toast} from 'react-toastify';
-import HashLoader from "react-spinners/HashLoader.js"
+import HashLoader from "react-spinners/HashLoader.js";
+import CheckboxComponent from './CheckboxComponent.jsx';
 
 const Profile = ({user}) => {
     const [selectedFile,setSelectedFile] = useState(null);
@@ -28,7 +29,7 @@ const Profile = ({user}) => {
 
     useEffect(() => {
         if (user) {
-          setFormData({ name: user.name, email: user.email, photo: user.photo, gender: user.gender, bloodType: user.bloodType });
+          setFormData({ name: user.name, email: user.email, photo: user.photo, gender: user.gender, bloodType: user.bloodType,symptoms:user.symptoms });
         }
       }, [user]);
 
@@ -44,7 +45,7 @@ const Profile = ({user}) => {
         // later we will use cloudinary to upload images
       
         setSelectedFile(data.url);
-        setFormData({ ...formData,photo:data.url});
+        setFormData({...formData,photo:data.url});
 
     };
 
@@ -69,7 +70,7 @@ const Profile = ({user}) => {
             setLoading(false)
             toast.success(message)
             navigate("/users/profile/me");
-            // navigate('/login')
+            navigate('/login')
 
         }catch(err){
                toast.error(err.message)
@@ -112,10 +113,7 @@ const Profile = ({user}) => {
                                     name="password"
                                     value={formData.password}                             
                                     onChange={handleInputChange}                                    
-                                    className="w-full pr-4 py-3 border-b border-solid 
-                                    border-[#0066ff61] focus:outline-none 
-                                    focus:border-b-primaryColor text-[16px] leading-7 
-                                    text-headingColor placeholder:text-textColor cursor-pointer"
+                                    className="w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer"
                                      
                                     />
                             </div>
@@ -149,6 +147,10 @@ const Profile = ({user}) => {
                                     </select>
                                 </label>
                             </div>
+                            <div className="mb-5 flex items-center justify-between">
+                                    <CheckboxComponent/>
+                            </div>
+                          
 
                             <div className="mb-5 flex items-center gap-3">
                                 {formData.photo &&(<figure className="w-[60px] h-[60px] rounded-full 

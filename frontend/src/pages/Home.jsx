@@ -38,7 +38,7 @@ const Home = () => {
                             we help patients live a healthy,longer life.
                             </h1>
 
-                            <p className='text__para'>Welcome to Speak Easy, your trusted partner in speech and language therapy. We believe that every individual deserves to communicate effectively and with clarity. Our dedicated team of speech therapists is committed to providing personalized care and evidence-based interventions to help you or your loved ones achieve their full potential.</p>
+                            <p className='text__para'>At Speak Easy, we believe in empowering individuals of all ages to communicate effectively. Our experienced speech therapists provide personalized care tailored to your specific needs. Whether you're struggling with articulation, fluency, or language comprehension, we're dedicated to helping you overcome challenges and reach your communication goals. With evidence-based techniques and a supportive environment, we'll work together to unlock your full potential.</p>
 
                                 <button className='btn'>
                                          Request an Appointment

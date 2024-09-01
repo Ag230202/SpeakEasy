@@ -52,10 +52,7 @@ const MyAccount = () => {
                  <h3 className='text-[18px] leading-[30px] text-headingColor'>{userData.name}</h3>
                  <p className='text-textColor text-[15px] leading-6 font-medium'>{userData.email}</p>
                  <p className='text-textColor text-[15px] leading-6 font-medium'>
-                     Blood Type: 
-                     <span className="mt-2 text-headingColor text-[22px] leading-8">
-                        {userData.bloodType}
-                        </span>
+                     Blood Type: <span className="mt-2 text-headingColor text-[22px] leading-8">{userData.bloodType}</span>
                  </p>
              </div>
 

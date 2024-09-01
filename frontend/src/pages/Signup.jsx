@@ -1,6 +1,8 @@
+
+
 import React from 'react'
 import signupImg from "../assets/images/signup.gif"
-// import avatar from "../assets/images/doctor-img01.png"
+import avatar from "../assets/images/doctor-img01.png"
 import { useState } from 'react';
 import { Link,useNavigate } from 'react-router-dom';
 import uploadImageToCloudinary from '../utils/uploadCloudinary';
@@ -154,8 +156,7 @@ const Signup = () => {
                             </div>
 
                             <div className="mb-5 flex items-center gap-3">
-                                {selectedFile &&(
-                                    <figure className="w-[60px] h-[60px] rounded-full 
+                                {selectedFile &&(<figure className="w-[60px] h-[60px] rounded-full 
                                 border-2 border-solid border-primaryColor flex items-center justify-center">
                                     <img
                                      src={previewURL} 

@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { Link } from 'react-router-dom';
 import aboutImg from "../../assets/images/about.png"
@@ -19,13 +20,12 @@ const About = () => {
                 {/* =============== about content ========= */}
                 <div className='w-full lg:w-1/2 xl:w-[670px] order-1 lg:order-2'>
                  <h2 className='heading'>Proud to be one of the nations best</h2>
-                 <p className='text__para'>Our mission: To provide compassionate, evidence-based speech 
-                   therapy services that foster effective communication, confidence, and connection.
+                 <p className='text__para'>For 30 Years in a row ,U.S News and world Report has recognized us 
+                    as one of the best public hospitals in the nation
                  </p>
 
                  <p className='text__para mt-[30px]'>
-                    Explore our site to learn more about our services, meet our team, and 
-                   discover how we can support you or your loved one's communication journey.
+                    present in 2nd para of about content // change it
                  </p>
 
                  <Link to="/"><button className='btn'>Learn More</button></Link>

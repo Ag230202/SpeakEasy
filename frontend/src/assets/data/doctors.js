@@ -33,6 +33,4 @@ export const doctors = [
     totalPatients: 1500,
     hospital: "Mount Adora Hospital, Sylhet.",
   },
-
-  
 ];

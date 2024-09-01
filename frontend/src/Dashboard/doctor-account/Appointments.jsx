@@ -1,5 +1,7 @@
 import React from 'react'
 import { formatDate } from '../../utils/formatDate'
+import { Link } from 'react-router-dom'
+import Communication from '../../components/communication'
 
 const Appointments = ({appointments}) => {
   return <table className='w-full text-left text-sm text-gray-500'>
@@ -14,12 +16,18 @@ const Appointments = ({appointments}) => {
             <th scope='col' className='px-6 py-3 '>
                 Payment
             </th>
-            <th scope='col' className='px-6 py-3 '>
-                Price
-             </th>
+            
              <th scope='col' className='px-6 py-3 '>
                 Booked On
              </th>
+             <th scope='col' className='px-6 py-3 '>
+                Add Therapy 
+             </th>
+             <th scope='col' className='px-6 py-3 '>
+                Chat with Patient
+             </th>
+
+
 
         </tr>
     </thead>
@@ -55,9 +63,14 @@ const Appointments = ({appointments}) => {
                 )}
 
             </td>
-            <td className='px-6 py-4'>{item.ticketPrice}</td>
+            
             <td className='px-6 py-4'>{formatDate(item.createdAt)}</td>
-
+           <td><Link to="/todo">
+    <button>Add therapies</button>
+  </Link></td> 
+           <td><Link to="/communication">
+    <button>Message</button>
+  </Link></td> 
         </tr>
     ))}
     </tbody>
