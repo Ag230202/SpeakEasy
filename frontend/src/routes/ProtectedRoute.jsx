@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { authContext } from '../context/AuthContext';
 
 const ProtectedRoute = ({children,allowedRoles}) => {
@@ -9,8 +9,7 @@ const ProtectedRoute = ({children,allowedRoles}) => {
 
     const isAllowed=allowedRoles.includes(role)
 
-    const accessibleRoute=
-    token && isAllowed ? children : <Navigate to ="/login" replace={true} />
+    const accessibleRoute=token && isAllowed ? children :<Navigate to ='/login' replace={true}/>
 
 
 
@@ -19,4 +18,3 @@ const ProtectedRoute = ({children,allowedRoles}) => {
 };
 
 export default ProtectedRoute;
-
