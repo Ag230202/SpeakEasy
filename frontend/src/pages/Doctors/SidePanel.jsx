@@ -1,4 +1,4 @@
-import { BASE_URL, token } from "../../config";
+import { BASE_URL } from "../../config";
 import convertTime from "../../utils/convertTime";
 import { toast } from "react-toastify";
 
@@ -8,7 +8,7 @@ const SidePanel = ({doctorId,ticketPrice,timeSlots}) => {
             const res=await fetch(`${BASE_URL}/bookings/checkout-session/${doctorId}`,{
                 method:'post',
                 headers:{
-                    Authorization:`Bearer ${token}`
+                    Authorization:`Bearer ${localStorage.getItem('token')}`
                 }
 
             })

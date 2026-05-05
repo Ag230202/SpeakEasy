@@ -2,7 +2,7 @@ import React from 'react'
 import { AiFillStar } from 'react-icons/ai';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { BASE_URL,token } from '../../config';
+import { BASE_URL } from '../../config';
 import HashLoader from 'react-spinners/HashLoader';
 import { toast } from 'react-toastify';
 
@@ -29,7 +29,7 @@ const FeedbackForm = () => {
             method:'post',
             headers:{
              'Content-Type':'application/json',
-             Authorization:`Bearer ${token}`
+             Authorization:`Bearer ${localStorage.getItem('token')}`
             },
             body:JSON.stringify({rating,reviewText}) 
          })

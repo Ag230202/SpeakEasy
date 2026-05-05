@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { Link,useNavigate } from 'react-router-dom';
 import uploadImageToCloudinary from '../../utils/uploadCloudinary';
-import { BASE_URL,token } from '../../config.js';
+import { BASE_URL } from '../../config.js';
 import {toast} from 'react-toastify';
 import HashLoader from "react-spinners/HashLoader.js";
 import CheckboxComponent from './CheckboxComponent.jsx';
@@ -59,7 +59,7 @@ const Profile = ({user}) => {
                 method:"PUT",
                 headers:{
                     'Content-Type':'application/json',
-                    Authorization:`Bearer ${token}`
+                    Authorization:`Bearer ${localStorage.getItem('token')}`
                 },
                 body:JSON.stringify(formData)
             },)

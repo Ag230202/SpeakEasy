@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { token } from '../config';
 import { toast } from 'react-toastify';
 
 const useFetchData = (url) => {
@@ -12,7 +11,7 @@ const useFetchData = (url) => {
       setLoading(true);
       try {
         const response = await fetch(url, {
-          headers: { Authorization: `Bearer ${token}` },
+          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
         });
         const result = await response.json();
 
@@ -33,7 +32,7 @@ const useFetchData = (url) => {
     return () => {
       // Cleanup function
     };
-  }, [url, token]);
+  }, [url]);
 
   return {
     data,
