@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../components/TodoNavbar/Navbar'
+import Navbar from '../components/ToDoNavbar/Navbar'
 import { useState, useEffect } from 'react'
 import { FaEdit } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
