@@ -28,17 +28,12 @@ app.get('/', (req, res) => {
 mongoose.set('strictQuery',false)
 const connectDB=async()=>{
     try{
-        await mongoose.connect(process.env.MONGO_URL,{
-            useNewUrlParser:true,
-            useUnifiedTopology:true,
-        })
+        await mongoose.connect(process.env.MONGO_URL)
 
         console.log('Mongo DB database is connected')
     }
     catch (err){
-        
-        console.log('Mongo DB database is not connected')
-
+        console.log('Mongo DB database is not connected:', err.message)
     }
 }
 
