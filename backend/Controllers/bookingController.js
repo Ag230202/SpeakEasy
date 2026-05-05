@@ -27,8 +27,8 @@ export const getCheckoutSession = async(req,res)=>{
                         unit_amount:doctor.ticketPrice * 100,
                         product_data:{
                             name:doctor.name,
-                            description:doctor.bio,
-                            images:[doctor.photo]
+                            description: doctor.bio || "Professional Speech Language Therapy Session",
+                            images: doctor.photo ? [doctor.photo] : []
                         }
                     },
                     quantity:1
