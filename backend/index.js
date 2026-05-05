@@ -16,7 +16,8 @@ const port = process.env.PORT || 8000
 
 // Allow requests from your React app's origin
 const corsOptions = {
-  origin: 'http://localhost:5173' // Replace with your React app's origin
+  origin: true, // Allows all origins during initial setup, or you can use [process.env.CLIENT_SITE_URL, "http://localhost:5173"]
+  credentials: true,
 };
 
 
