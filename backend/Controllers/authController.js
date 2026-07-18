@@ -18,7 +18,15 @@ const generateToken=user=>{
 
 export const register=async(req,res)=>{
 
-    const {email,password,name,role,photo,gender}=req.body
+    const {email,password,name,role,photo,gender}=req.body;
+
+    if (!email || !password || !name || !role || !gender) {
+        return res.status(400).json({ success: false, message: 'Please provide all mandatory fields: name, email, password, role, and gender.' });
+    }
+
+    // --- MOCK MODE: Return success immediately to bypass DB ---
+    //return res.status(200).json({success:true,message:'User successfully created (Mocked).'});
+    // ----------------------------------------------------------
 
     try{
         let user=null;
@@ -79,9 +87,10 @@ export const register=async(req,res)=>{
 
     }
     catch(err){
+        if (err.name === 'MongooseServerSelectionError' || err.message.includes('ECONNREFUSED') || err.message.includes('connect')) {
+            return res.status(500).json({success:false, message: 'Database connection failed. Please try again later.'});
+        }
         res.status(500).json({success:false,message:'Internal server error, Try again.'})
-
-
     }
 
 };
@@ -89,6 +98,18 @@ export const register=async(req,res)=>{
 export const login=async(req,res)=>{
     
     const {email}=req.body;
+
+    // // --- MOCK MODE: Return dummy user immediately to bypass DB ---
+    // const mockUser = {
+    //     _id: 'mock_id_123',
+    //     name: 'Mock User',
+    //     email: email,
+    //     role: 'patient',
+    //     photo: ''
+    // };
+    // const token = jwt.sign({id:mockUser._id, role:mockUser.role}, process.env.JWT_SECRET_KEY || 'secret', { expiresIn: "15d" });
+    // return res.status(200).json({status:true,message:'Successfuly login (Mocked)', token, data:mockUser, role:mockUser.role});
+    // // -------------------------------------------------------------
 
     try{
         let user=null;
@@ -131,6 +152,9 @@ export const login=async(req,res)=>{
     }
     catch(err)
     {
+        if (err.name === 'MongooseServerSelectionError' || err.message.includes('ECONNREFUSED') || err.message.includes('connect')) {
+            return res.status(500).json({status:false, message: 'Database connection failed. Please try again later.'});
+        }
         res.status(500).json({status:false,message:'Failed to login'});
     }
 };

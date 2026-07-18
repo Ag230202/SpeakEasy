@@ -139,6 +139,7 @@ const Profile = ({user}) => {
                                         value={formData.gender}                             
                                         onChange={handleInputChange}
                                         className="text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none"
+                                        required
                                     >
                                         <option value="">Select</option>
                                         <option value="male">Male</option>
