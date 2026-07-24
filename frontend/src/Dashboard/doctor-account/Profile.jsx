@@ -174,6 +174,7 @@ const Profile = ({doctorData}) => {
             onChange={handleInputChange}
             placeholder="Full Name"
             className="form__input"
+            required
           />
         </div>
         <div className="mb-5">
@@ -225,6 +226,7 @@ const Profile = ({doctorData}) => {
                 value={formData.gender}
                 onChange={handleInputChange}
                 className="form__input py-3.5"
+                required
               >
                 <option value="">Select</option>
                 <option value="male">Male</option>
@@ -239,6 +241,7 @@ const Profile = ({doctorData}) => {
                 value={formData.specialization}
                 onChange={handleInputChange}
                 className="form__input py-3.5"
+                required
               >
                 <option value="">Select</option>
                 <option value="Adult SLP">Adult SLP</option>
@@ -257,6 +260,7 @@ const Profile = ({doctorData}) => {
                 value={formData.ticketPrice}
                 className="form__input"
                 onChange={handleInputChange}
+                required
               />
             </div>
             </div>
@@ -403,7 +407,7 @@ const Profile = ({doctorData}) => {
         
          <div className="mb-5">
           <p className="form__label">About*</p>
-          <textarea name="about" rows={5} value={formData.about} placeholder="Write about you " onChange={handleInputChange} className="form__input"></textarea>
+          <textarea name="about" rows={5} value={formData.about} placeholder="Write about you " onChange={handleInputChange} className="form__input" required></textarea>
           
           </div> 
 
